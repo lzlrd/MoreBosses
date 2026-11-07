@@ -52,7 +52,7 @@ public class SpawnInWorld implements Listener {
 			        	break;
 			        case 3:
 			        	if(this.config.getBoolean("TimmothySpawn")) {
-			        		new TimmothyEntity(this.config.getInt("TimmothySpawn"), spawnLocation, chunkWorld, main);
+			        		new TimmothyEntity(this.config.getInt("TimmothyHealth"), spawnLocation, chunkWorld, main);
 			        	}
 			        	break;
 			        case 4:

@@ -112,7 +112,7 @@ public class SpawnBossCommand implements CommandExecutor, Listener {
                 new BigBoyEntity(config.getInt("BigBoyHealth"), location, world, main);
                 break;
             case "timmothy":
-                new TimmothyEntity(config.getInt("TimmothySpawn"), location, world, main);
+                new TimmothyEntity(config.getInt("TimmothyHealth"), location, world, main);
                 break;
             case "bartholomew":
                 new BartholomewEntity(config.getInt("BartholomewHealth"), location, world, main);
