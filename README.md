@@ -1,5 +1,16 @@
 ![More-Bosses-5-9-2025](https://github.com/user-attachments/assets/c877ad7d-e2bd-4eb7-b030-4b37e275efca)
 
+## This fork
+
+MoreBosses 2.1.5 for Paper and Leaf 26.3, built against Spigot 26.3. Changes from upstream:
+
+- Structures are built only in newly generated chunks of the worlds in `Worlds`, never over terrain players have already seen.
+- Timmothy spawns with `TimmothyHealth`; he used to spawn with no health.
+- WorldEdit, which the structures need, loads first. FastAsyncWorldEdit provides it too.
+- The update check knows this is 2.1.5, and no longer fails on every op join when the Spigot lookup fails.
+
+Build with JDK 25: `mvn package`, then take `target/morebosses-1.0-SNAPSHOT.jar`.
+
 ## 🎥 Videos
 
 - [Oswaldo Showcase](https://www.youtube.com/watch?v=f3znyvnmU6U)
