@@ -3,6 +3,7 @@ package net.ddns.vcccd;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -80,8 +81,17 @@ public class GenerateStructures implements Listener {
             return;
         }
 
+        // Only build in freshly generated chunks of the configured worlds, never over terrain players have seen.
+        if (!event.isNewChunk()) {
+            return;
+        }
+
         Chunk chunk = event.getChunk();
         World world = chunk.getWorld();
+        if (!Arrays.asList(plugin.getConfig().getString("Worlds", "world").split(",")).contains(world.getName())) {
+            return;
+        }
+
         int chunkX = chunk.getX();
         int chunkZ = chunk.getZ();
 
