@@ -13,7 +13,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class UpdateChecker implements Listener {
 	
-	private String GameVersion = "2.1.4";
+	private String GameVersion = "2.1.5";
 	private String Version = constructData();
 	private final Main main;
 	
@@ -64,7 +64,7 @@ public class UpdateChecker implements Listener {
     @EventHandler
     public void on(PlayerJoinEvent event) {
         if(event.getPlayer().isOp()) {
-            if(!this.Version.equals(this.GameVersion)) {
+            if(this.Version != null && !this.Version.equals(this.GameVersion)) {
             	sendUpdateMessage(event.getPlayer());
             	sendUpdateMessage(main.getConsole());
             }
